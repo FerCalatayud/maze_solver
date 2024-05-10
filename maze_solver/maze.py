@@ -24,6 +24,8 @@ class Maze():
         self.cell_size_y = cell_size_y
         self.__win = win
         self._create_cells()
+        self._break_entrance_and_exit()
+
     def _create_cells(self):
         # Create cells base on the number of rows and columns
         print(f"=============\n Creating the cells \n=============")
@@ -76,3 +78,9 @@ class Maze():
         self.__win.redraw()
         time.sleep(0.05)
         
+    def _break_entrance_and_exit(self):
+        self.cells[0][0].top_wall = False
+        self._draw_cell(0, 0)
+
+        self.cells[self.num_cols - 1][self.num_rows - 1].bottom_wall = False
+        self._draw_cell(self.num_cols - 1, self.num_rows - 1)

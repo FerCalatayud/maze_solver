@@ -6,8 +6,7 @@ def main():
 
     win = Window(800, 600)
     
-    main_maze = Maze(0, 0, 12, 10, 10, 10, win)
-    main_maze._create_cells()
+    main_maze = Maze(100, 100, 5, 5, 10, 10, win)
 
     win.wait_for_close()
 

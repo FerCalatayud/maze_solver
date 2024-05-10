@@ -30,12 +30,24 @@ class Cell():
 
         if self.left_wall:
             self.__window.draw_line(Line(point_c, point_a), "black")
+        else:
+            self.__window.draw_line(Line(point_c, point_a), "gray")
+
         if self.right_wall:
             self.__window.draw_line(Line(point_d, point_b), "black")
+        else:
+            self.__window.draw_line(Line(point_d, point_b), "gray")
+
         if self.top_wall:
             self.__window.draw_line(Line(point_a, point_b), "black")
+        else:
+            self.__window.draw_line(Line(point_a, point_b), "gray")
+
         if self.bottom_wall:
             self.__window.draw_line(Line(point_c, point_d), "black")
+        else:
+            self.__window.draw_line(Line(point_c, point_d), "gray")
+
 
     def draw_move(self, to_cell, undo=False):
         # calculates the two central points of the cells
