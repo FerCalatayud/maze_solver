@@ -12,6 +12,7 @@ class Cell():
         self.__x_bottom_right =  None
         self.__y_bottom_right =  None
         self.__window = window
+        self.visited = False
     
     def draw(self, x_top_left, y_top_left, x_bottom_right, y_bottom_right):
 
@@ -48,7 +49,6 @@ class Cell():
         else:
             self.__window.draw_line(Line(point_c, point_d), "gray")
 
-
     def draw_move(self, to_cell, undo=False):
         # calculates the two central points of the cells
         # specifically calculates the half of the size of each x and y lines, and finally adds it to the top left point coordinates
@@ -61,6 +61,6 @@ class Cell():
         ending_point = Point(end_cell_starting_point_x, end_cell_starting_point_y)
 
         if undo:
-            self.__window.draw_line(Line(starting_point, ending_point), fill_color="gray")
-        else:
             self.__window.draw_line(Line(starting_point, ending_point), fill_color="red")
+        else:
+            self.__window.draw_line(Line(starting_point, ending_point), fill_color="green")
