@@ -6,7 +6,8 @@ def main():
 
     win = Window(800, 600)
     
-    main_maze = Maze(100, 50, 10, 10, 50, 50, win, seed=1)
+    #main_maze = Maze(100, 50, 10, 10, 50, 50, win, seed=10)
+    main_maze = Maze(100, 50, 10, 10, 50, 50, win)
 
     main_maze.solve()
 

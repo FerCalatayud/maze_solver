@@ -112,9 +112,9 @@ class Maze():
             if column_idx - 1 < 0:
                 next_column_left = False
             if row_idx + 1 > (len(self.cells[0]) - 1):
-                next_row_up = False
-            if row_idx - 1 < 0:
                 next_row_down = False
+            if row_idx - 1 < 0:
+                next_row_up = False
             
 
             # columns
@@ -124,9 +124,9 @@ class Maze():
                 visiting.append((column_idx - 1, row_idx))
 
             # rows
-            if next_row_up and not self.cells[column_idx][row_idx + 1].visited:
+            if next_row_down and not self.cells[column_idx][row_idx + 1].visited:
                 visiting.append((column_idx, row_idx + 1))
-            if next_row_down and not self.cells[column_idx][row_idx - 1].visited:
+            if next_row_up and not self.cells[column_idx][row_idx - 1].visited:
                 visiting.append((column_idx, row_idx - 1))
 
             # check if there is any adjacent cells to visit
